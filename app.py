@@ -39,9 +39,9 @@ def analizar(data: Mensaje):
 
     texto = data.texto.lower()
 
-    toxicidad = round(random.uniform(0,1),2)
-    sesgo = round(random.uniform(0,1),2)
-    transparencia = round(random.uniform(0,1),2)
+    toxicidad = round(random.uniform(0,100),2)
+    sesgo = round(random.uniform(0,100),2)
+    transparencia = round(random.uniform(0,100),2)
 
     impacto = round(
         (toxicidad + sesgo)/2,
@@ -65,7 +65,7 @@ def analizar(data: Mensaje):
             riesgo = "Alto"
 
     # Motor de reglas
-    if toxicidad > 0.80:
+    if toxicidad > 80:
 
         accion = "Bloquear"
 
